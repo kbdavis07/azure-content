@@ -176,26 +176,33 @@ deploying code for a web app or for setting up a Virtual Machine is almost the s
 
     ![add web app](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-app.png)
     
-1. Select **MVC** and clear the field for **Host in the cloud** because the resource group project will perform that task.
+2. Select **MVC** and clear the field for **Host in the cloud** because the resource group project will perform that task.
 
     ![select MVC](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/select-mvc.png)
     
-1. After your web app has been created, add a reference in the resource group project to the web app project.
+3. After your web app has been created, add a reference in the resource group project to the web app project.
 
     ![add reference](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-reference.png)
     
-    By adding a reference, you link the web app project to the resource group project, and set three key properties.  The **Additional Properties** contains the web deployment package staging location that will be 
-    pushed to the Azure Storage. The **Include File Path** contains the path where the package will be created.  The **Include Targets** contains the command that deployment will execute. The default value of 
+    
+    By adding a reference, you link the web app project to the resource group project, and you need to set three key properties.  
+    
+    The **Additional Properties** contains the web deployment package staging location that will be 
+    pushed to the Azure Storage. 
+    
+    The **Include File Path** contains the path where the package will be created.  The **Include Targets** contains the command that deployment will execute. 
+    
+    The default value of 
     **Build;Package** enables the deployment to build and create a web deployment package (package.zip).  A publish profile is not needed as the deployment gets the necessary information from the properties to 
     create the package.
     
       ![see reference](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/see-reference.png)
       
-1. Add a new resource to the template, and this time select **Web Deploy for Web Apps**. 
+4. Add a new resource to the template, and this time select **Web Deploy for Web Apps**. 
 
     ![add web deploy](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/add-web-deploy.png)
     
-1. Re-deploy your resource group project to the resource group. This time there are some new parameters. You do not need to provide values for **_artifactsLocation** or **_artifactsLocationSasToken** be they are auto-generated. Set the folder and file name to the path that contains the deployment package.
+5. Re-deploy your resource group project to the resource group. This time there are some new parameters. You do not need to provide values for **_artifactsLocation** or **_artifactsLocationSasToken** be they are auto-generated. Set the folder and file name to the path that contains the deployment package.
 
     ![add web deploy](./media/vs-azure-tools-resource-groups-deployment-projects-create-deploy/set-new-parameters.png)
     
